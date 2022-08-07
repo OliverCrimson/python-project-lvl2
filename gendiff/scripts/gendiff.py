@@ -16,6 +16,7 @@ y = json_to_python(args.b)
 
 result = generate_diff(x, y)
 
+
 def main():
     print(result)
 

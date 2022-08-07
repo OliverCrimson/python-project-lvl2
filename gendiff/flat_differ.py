@@ -7,6 +7,7 @@ def json_to_python(file: str):
         result = json.load(some_file)
     return result
 
+
 def forming(item):
     str_from_dict = '\n'.join(
         [f'{key}: {str(value).lower()}'
