@@ -16,5 +16,7 @@ jobs:
           poetry add pytest
       - name: Run linter
         run: |
+          poetry build
+          make install
           make lint
           make testing
