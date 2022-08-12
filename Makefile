@@ -12,3 +12,6 @@ lint:
 
 poet:
 	poetry install
+
+testing:
+	pytest
