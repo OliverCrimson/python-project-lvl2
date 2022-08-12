@@ -1,11 +1,4 @@
-import json
-# import os
-
-
-def json_to_python(file: str):
-    with open(file, "r") as some_file:
-        result = json.load(some_file)
-    return result
+# from convertation import convert
 
 
 def forming(item):
@@ -40,3 +33,7 @@ def generate_diff(one, two):
     dicted_result = dict(list(zip(key_list, values_list)))
     result = forming(dicted_result)
     return "{" + "\n" + result + "\n" + "}"
+
+
+
+# print(generate_diff(convert('file_one.yaml'), convert('file_two.json')))

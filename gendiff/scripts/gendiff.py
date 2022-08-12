@@ -1,6 +1,8 @@
 import argparse
 
-from gendiff.flat_differ import generate_diff, json_to_python
+from gendiff.convertation import convert
+from gendiff.flat_differ import generate_diff
+
 
 
 parser = argparse.ArgumentParser(
@@ -12,8 +14,8 @@ parser.add_argument("b", help='second file')
 
 args = parser.parse_args()
 
-x = json_to_python(args.a)
-y = json_to_python(args.b)
+x = convert(args.a)
+y = convert(args.b)
 
 result = generate_diff(x, y)
 
