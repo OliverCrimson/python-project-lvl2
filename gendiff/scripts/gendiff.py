@@ -4,7 +4,6 @@ from gendiff.convertation import convert
 from gendiff.flat_differ import generate_diff
 
 
-
 parser = argparse.ArgumentParser(
     description="Compares two configuration files and shows a difference"
 )
