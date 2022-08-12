@@ -2,7 +2,6 @@ import argparse
 
 from gendiff.flat_differ import generate_diff, json_to_python
 
-import pathlib
 
 parser = argparse.ArgumentParser(
     description="Compares two configuration files and shows a difference"
