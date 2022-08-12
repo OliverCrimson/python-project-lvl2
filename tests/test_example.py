@@ -1,18 +1,15 @@
+import pathlib
+
 import gendiff.flat_differ
 from gendiff.flat_differ import json_to_python, generate_diff, forming
 
-# sample = gendiff.flat_differ.generate_diff(
-#     json_to_python('/home/monkeybusiness/NEWNEW/python-project-lvl2/gendiff/file_one.json'),
-#     json_to_python('/home/monkeybusiness/NEWNEW/python-project-lvl2/gendiff/file_two.json')
-# )
+import os
+
 def testing_flat():
     if type(gendiff.flat_differ.generate_diff(
-        json_to_python('/home/monkeybusiness/NEWNEW/python-project-lvl2/gendiff/file_one.json'),
-        json_to_python('/home/monkeybusiness/NEWNEW/python-project-lvl2/gendiff/file_two.json'))) != str:
+            json_to_python(os.path.join(os.getcwd(), 'file_one.json')),
+            json_to_python(os.path.join(os.getcwd(), 'file_two.json')))) != str:
         raise Exception('asd')
     else:
         pass
 
-assert gendiff.flat_differ.generate_diff(
-        json_to_python('/home/monkeybusiness/NEWNEW/python-project-lvl2/gendiff/file_one.json'),
-        json_to_python('/home/monkeybusiness/NEWNEW/python-project-lvl2/gendiff/file_two.json'))[0] == '{'
