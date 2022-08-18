@@ -16,3 +16,11 @@ def testing_flat():
     else:
         pass
 
+def test_json(json):
+    if type(json) == dict:
+        print('type is ' + str(type(json)))
+
+
+def test_yaml(yamol):
+    if type(yamol) == dict:
+        pass
