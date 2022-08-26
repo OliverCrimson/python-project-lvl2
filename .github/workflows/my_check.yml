@@ -23,8 +23,9 @@ jobs:
           make testing
           pytest
       - name: climate coverage
-        uses: paambaati/codeclimate-action@v2.2.4
+        uses: paambaati/codeclimate-action@v3.0.0
         env:
          CC_TEST_REPORTER_ID: 1d4dd2831966ea3c0f68072bf0dc749a239006068f35422c35ca12d70173d648
         with:
-         coverageCommand: pytest --cov
+         coverageCommand: coverage run -m pytest
+         debug: true
