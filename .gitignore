@@ -1,4 +1,5 @@
-super
 dist
 .venv
 .idea
+.coverage
+.pytest_cache

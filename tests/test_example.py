@@ -1,26 +1,28 @@
+import pytest
 import pathlib
-
-import gendiff.flat_differ
-
-
-import os
-
-from gendiff.convertation import convert
+from gendiff.diff import generate
 
 
-def testing_flat():
-    if type(gendiff.flat_differ.generate_diff(
-            convert(os.path.join(os.getcwd(), 'file_one.json')),
-            convert(os.path.join(os.getcwd(), 'file_two.json')))) != str:
-        raise Exception('asd')
-    else:
-        pass
-
-def test_json(json):
-    if type(json) == dict:
-        print('type is ' + str(type(json)))
 
 
-def test_yaml(yamol):
-    if type(yamol) == dict:
-        pass
+
+@pytest.mark.parametrize(
+    'file1, file2, expected_result, formatter',
+    [('file1tree.json', 'file2tree.json', 'tree_result_example.txt', 'stylish'),
+     ('file1tree.json', 'file2tree.json', 'plain_form_example.txt', 'plain'),
+     ('file1tree.yaml', 'file2tree.yaml', 'tree_result_example.txt', 'stylish'),
+     ('file1tree.yaml', 'file2tree.yaml', 'plain_form_example.txt', 'plain'),
+     ('file1flat.json', 'file2flat.json', 'flat_example.txt', 'stylish'),
+     ('file1flat.yaml', 'file2flat.yaml', 'flat_example.txt', 'stylish'),
+     ('file1flat.json', 'file2flat.yaml', 'flat_example.txt', 'stylish'),
+     ('file1flat.json', 'file2flat.yaml', 'flat_plain_example.txt', 'plain'),
+     ('file1tree.json', 'file2tree.json', 'json_form_example.txt', 'json')]
+)
+
+def test_tree(file1, file2, expected_result, formatter):
+    home_dir = str(pathlib.Path.cwd())
+    f1 = f'{home_dir}/tests/fixtures/{file1}'
+    f2 = f'{home_dir}/tests/fixtures/{file2}'
+    with open(f'{home_dir}/tests/fixtures/{expected_result}') as data:
+        expected = data.read()
+        assert generate(f1, f2, formatter) == expected

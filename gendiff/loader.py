@@ -2,7 +2,7 @@ import json
 import yaml
 
 
-def convert(file):
+def load_file(file):
     if file.endswith('.json'):
         with open(file, "r") as some_file:
             result = json.load(some_file)
@@ -13,7 +13,3 @@ def convert(file):
             return result
     else:
         raise Exception(f'file {file} has unsupported format.')
-
-
-
-

@@ -1,0 +1,98 @@
+{
+    "common": {
+        "status": "got kids",
+        "data": {
+            "follow": {
+                "status": "new",
+                "data": false
+            },
+            "setting1": {
+                "status": "equal",
+                "data": "Value 1"
+            },
+            "setting2": {
+                "status": "deleted",
+                "data": 200
+            },
+            "setting3": {
+                "status": "different",
+                "data1": true,
+                "data2": null
+            },
+            "setting4": {
+                "status": "new",
+                "data": "blah blah"
+            },
+            "setting5": {
+                "status": "new",
+                "data": {
+                    "key5": "value5"
+                }
+            },
+            "setting6": {
+                "status": "got kids",
+                "data": {
+                    "doge": {
+                        "status": "got kids",
+                        "data": {
+                            "wow": {
+                                "status": "different",
+                                "data1": "",
+                                "data2": "so much"
+                            }
+                        }
+                    },
+                    "key": {
+                        "status": "equal",
+                        "data": "value"
+                    },
+                    "ops": {
+                        "status": "new",
+                        "data": "vops"
+                    }
+                }
+            }
+        }
+    },
+    "group1": {
+        "status": "got kids",
+        "data": {
+            "baz": {
+                "status": "different",
+                "data1": "bas",
+                "data2": "bars"
+            },
+            "foo": {
+                "status": "equal",
+                "data": "bar"
+            },
+            "nest": {
+                "status": "different",
+                "data1": {
+                    "key": "value"
+                },
+                "data2": "str"
+            }
+        }
+    },
+    "group2": {
+        "status": "deleted",
+        "data": {
+            "abc": 12345,
+            "deep": {
+                "id": 45
+            }
+        }
+    },
+    "group3": {
+        "status": "new",
+        "data": {
+            "deep": {
+                "id": {
+                    "number": 45
+                }
+            },
+            "fee": 100500
+        }
+    }
+}
