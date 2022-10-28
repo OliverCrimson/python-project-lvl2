@@ -1,6 +1,6 @@
 import pytest
 import pathlib
-from gendiff.diff import generate
+from gendiff.diff import generate_diff
 
 
 
@@ -25,4 +25,4 @@ def test_tree(file1, file2, expected_result, formatter):
     f2 = f'{home_dir}/tests/fixtures/{file2}'
     with open(f'{home_dir}/tests/fixtures/{expected_result}') as data:
         expected = data.read()
-        assert generate(f1, f2, formatter) == expected
+        assert generate_diff(f1, f2, formatter) == expected

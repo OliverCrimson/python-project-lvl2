@@ -5,7 +5,7 @@ from gendiff.formatters.plain import plain_form
 from gendiff.formatters.json_form import json_to_dict
 
 
-def generate(data1, data2, form='stylish'):
+def generate_diff(data1, data2, form='stylish'):
     if form == 'stylish':
         result = key_gathering(load_file(data1), load_file(data2))
         return tree_walk(result)
