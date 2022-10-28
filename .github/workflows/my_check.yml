@@ -4,9 +4,6 @@ on: push
 jobs:
   start_linter:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.10]
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -14,7 +11,7 @@ jobs:
         run: |
           pip install poetry
           pip install pytest
-          pip install pyparsing
+          pip3 install requests
           poetry install
           pip install flake8
           poetry add pytest
