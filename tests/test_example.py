@@ -3,9 +3,6 @@ import pathlib
 from gendiff.diff import generate_diff
 
 
-
-
-
 @pytest.mark.parametrize(
     'file1, file2, expected_result, formatter',
     [('file1tree.json', 'file2tree.json', 'tree_result_example.txt', 'stylish'),
@@ -18,7 +15,6 @@ from gendiff.diff import generate_diff
      ('file1flat.json', 'file2flat.yaml', 'flat_plain_example.txt', 'plain'),
      ('file1tree.json', 'file2tree.json', 'json_form_example.txt', 'json')]
 )
-
 def test_tree(file1, file2, expected_result, formatter):
     home_dir = str(pathlib.Path.cwd())
     f1 = f'{home_dir}/tests/fixtures/{file1}'
