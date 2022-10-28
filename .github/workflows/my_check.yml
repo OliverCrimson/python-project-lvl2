@@ -4,6 +4,9 @@ on: push
 jobs:
   start_linter:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.10]
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -19,6 +22,7 @@ jobs:
         run: |
           poetry build
           make install
+          make lint
           make testing
           pytest
       - name: climate coverage
