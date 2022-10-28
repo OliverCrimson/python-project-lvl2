@@ -14,6 +14,7 @@ jobs:
         run: |
           pip install poetry
           pip install pytest
+          pip install pyparsing
           poetry install
           pip install flake8
           poetry add pytest
