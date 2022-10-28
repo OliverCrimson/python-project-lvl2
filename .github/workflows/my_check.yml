@@ -21,7 +21,7 @@ jobs:
           make install
           make lint
           make testing
-          pytest
+          pytest --cov
       - name: climate coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
