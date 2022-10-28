@@ -6,3 +6,6 @@
 
 ### Test coverage:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f7c95d3ff72397418c1c/test_coverage)](https://codeclimate.com/github/OliverCrimson/python-project-lvl2/test_coverage)
+
+### Demo:
+[![asciicast](https://asciinema.org/a/VXNRVJSrFYgL2B2OEa1ESf2WC.svg)](https://asciinema.org/a/VXNRVJSrFYgL2B2OEa1ESf2WC)
