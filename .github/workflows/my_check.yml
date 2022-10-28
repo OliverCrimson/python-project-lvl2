@@ -19,7 +19,6 @@ jobs:
         run: |
           poetry build
           make install
-          make lint
           make testing
           pytest
       - name: climate coverage
