@@ -4,12 +4,18 @@ import yaml
 
 def load_file(file):
     if file.endswith('.json'):
-        with open(file, "r") as some_file:
-            result = json.load(some_file)
-        return result
-    if file.endswith('.yaml') or file.endswith('.yml'):
-        with open(file) as some_file:
-            result = yaml.safe_load(some_file)
-            return result
+        return json_extractor(file)
+    elif file.endswith('.yaml') or file.endswith('.yaml'):
+        return yaml_extractor(file)
     else:
-        raise Exception(f'file {file} has unsupported format.')
+        raise Exception(f"{file} has unsupported format.")
+
+
+def json_extractor(file):
+    with open(file, "r") as data:
+        return json.load(data)
+
+
+def yaml_extractor(file):
+    with open(file, "r") as data:
+        return yaml.safe_load(data)

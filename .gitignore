@@ -4,3 +4,4 @@ dist
 .coverage
 .pytest_cache
 coverage.xml
+venv
