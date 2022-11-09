@@ -14,6 +14,7 @@ def chose_formatter(file_one, file_two, form='stylish'):
         return plain_form(build(
             load_file(file_one), load_file(file_two)
         ))
+
     if form == 'json':
         return json_to_dict(build(
             load_file(file_one), load_file(file_two)
