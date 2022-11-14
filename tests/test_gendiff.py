@@ -1,7 +1,7 @@
 import pytest
 import pathlib
 
-from gendiff.formatter import chose_formatter
+from gendiff import generate_diff
 
 
 @pytest.mark.parametrize(
@@ -18,4 +18,4 @@ def test_tree(file1, file2, expected_result, form):
     f2 = f'{home_dir}/tests/fixtures/{file2}'
     with open(f'{home_dir}/tests/fixtures/{expected_result}') as data:
         expected = data.read()
-        assert chose_formatter(f1, f2, form) == expected
+        assert generate_diff(f1, f2, form) == expected
