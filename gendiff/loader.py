@@ -12,8 +12,6 @@ def parse(data, format_name):
         return json.load(data)
     if format_name == 'yaml':
         return yaml.safe_load(data)
-    else:
-        raise Exception(f"{format_name} has unsupported format")
 
 
 def get_file_format(file):
